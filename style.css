@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    min-height: 100vh;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+}
+
+.card {
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Notice board only */
+.notice-board .list-group-item {
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.notice-board .list-group-item:hover {
+    background-color: #f1f6ff;
+    transform: translateX(4px);
+}
+
+/* Attendance table hover */
+.table-hover tbody tr:hover {
+    background-color: #f1f5ff;
+}
+footer {
+    font-size: 0.9rem;
+}
+/* ---------- Dark Mode ---------- */
+body.dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .list-group-item,
+body.dark-mode .table {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+}
+
+body.dark-mode .table-dark {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .nav-link {
+    color: #ddd;
+}
+
+body.dark-mode .nav-link.active,
+body.dark-mode .nav-link:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+body.dark-mode footer {
+    background-color: #1f1f1f;
+    color: #ccc;
+}
