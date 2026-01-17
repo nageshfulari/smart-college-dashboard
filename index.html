@@ -20,6 +20,13 @@
 
 <body>
 
+
+    <script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
     <!-- NAVBAR -->
     <nav class="navbar bg-dark text-white px-3 d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center">
@@ -254,4 +261,5 @@
 
 
 </html>
+
 
