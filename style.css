@@ -1,107 +1,162 @@
+/* ===============================
+   Base Layout
+================================ */
 body {
-    background-color: #f8f9fa;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
+  background-color: #f8f9fa;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .sidebar {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
+footer {
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   Navigation
+================================ */
 .nav-link {
-    color: #333;
-    font-weight: 500;
+  color: #333;
+  font-weight: 500;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background-color: #0d6efd;
-    color: white;
-    border-radius: 6px;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 6px;
 }
 
+/* ===============================
+   Cards
+================================ */
 .card {
-    border-radius: 12px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Notice board only */
+/* ===============================
+   Profile Image
+================================ */
+.profile-img {
+  object-fit: cover;
+  border: 2px solid #0d6efd;
+}
+
+/* ===============================
+   Tables
+================================ */
+.table-hover tbody tr:hover {
+  background-color: #f1f5ff;
+}
+
+/* ===============================
+   Notice Board (Interaction + Responsive)
+================================ */
+.notice-board {
+  width: 100%;
+}
+
+.notice-board .list-group {
+  width: 100%;
+}
+
 .notice-board .list-group-item {
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  white-space: normal;
+  word-break: break-word;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .notice-board .list-group-item:hover {
-    background-color: #f1f6ff;
-    transform: translateX(4px);
+  background-color: #eef4ff;
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Attendance table hover */
-.table-hover tbody tr:hover {
-    background-color: #f1f5ff;
+.notice-board .list-group-item::after {
+  content: "→";
+  opacity: 0;
+  margin-left: 6px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(-6px);
 }
-footer {
-    font-size: 0.9rem;
+
+.notice-board .list-group-item:hover::after {
+  opacity: 0.6;
+  transform: translateX(4px);
 }
-/* ---------- Dark Mode ---------- */
+
+/* ===============================
+   Dark Mode
+================================ */
 body.dark-mode {
-    background-color: #121212;
-    color: #f1f1f1;
+  background-color: #121212;
+  color: #f1f1f1;
 }
 
 body.dark-mode .bg-light {
-    background-color: #1e1e1e !important;
+  background-color: #1e1e1e !important;
 }
 
 body.dark-mode .navbar {
-    background-color: #1f1f1f !important;
+  background-color: #1f1f1f !important;
 }
 
 body.dark-mode .card,
 body.dark-mode .list-group-item,
 body.dark-mode .table {
-    background-color: #1e1e1e;
-    color: #f1f1f1;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
 }
 
 body.dark-mode .table-dark {
-    background-color: #2a2a2a;
+  background-color: #2a2a2a;
 }
 
 body.dark-mode .nav-link {
-    color: #ddd;
+  color: #ddd;
 }
 
-body.dark-mode .nav-link.active,
-body.dark-mode .nav-link:hover {
-    background-color: #0d6efd;
-    color: white;
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  background-color: #0d6efd;
+  color: white;
 }
 
 body.dark-mode footer {
-    background-color: #1f1f1f;
-    color: #ccc;
+  background-color: #1f1f1f;
+  color: #ccc;
 }
+
+body.dark-mode .notice-board .list-group-item:hover {
+  background-color: #2a2f3a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===============================
+   Responsive Fixes
+================================ */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    position: relative;
-  }
-
-  .content {
+  #sidebar {
     width: 100%;
   }
 
-  nav {
-    flex-direction: column;
+  #mainContent {
+    padding: 1rem !important;
   }
 }
